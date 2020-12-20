@@ -1,10 +1,7 @@
 package com.fastcampus.javaallinone.project3.mycontact.domain;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.*;
 import org.hibernate.annotations.Where;
@@ -48,5 +45,8 @@ public class Person {
     @ToString.Exclude
     private String phoneNumber;
 
+    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
+    @ToString.Exclude
+    private Block block;
 
 }
