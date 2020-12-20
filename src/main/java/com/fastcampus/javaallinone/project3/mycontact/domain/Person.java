@@ -18,6 +18,9 @@ import java.time.LocalDateTime;
  * @since 2019-07-07
  */
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 @Data
 public class Person {
 
@@ -25,18 +28,25 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @NonNull
     private String name;
 
-
+    @NonNull
     private int age;
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+    private String hobby;
+
+    @NonNull
+    private String bloodType;
+
+    private String address;
+
+    private LocalDate birthday;
+
+    private String job;
+
+    @ToString.Exclude
+    private String phoneNumber;
+
+
 }
